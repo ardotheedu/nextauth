@@ -3,3 +3,5 @@ export class AuthTokenError extends Error {
         super('Error with authentication token')
     }
 }
+
+

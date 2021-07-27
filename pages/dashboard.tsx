@@ -4,6 +4,7 @@ import { api } from "../services/apiClient";
 
 import { withSSRAuth } from '../utils/withSSRAuth'
 import { setupAPIClient } from '../services/api';
+import { Can } from '../components/Can';
 
 
 export default function Dashboard() {
@@ -16,7 +17,12 @@ export default function Dashboard() {
     }, [])
 
     return (
+      <>
         <h1>{user?.email}</h1>
+        <Can permissions={['metrics.list']}>
+          <div>Metricas</div>
+        </Can>
+      </>
     )
 }
 
